@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: auto;
+    width: 100vh;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url(/res/NHSIC.png);
+}
+
+.bg-mask {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAE1JREFUOE9j5BaRuvnr+2cGNk5eBhighM8IMhBuEhUYKAZS4jKQW0D6aeNCargMFge0cSE1Ync0DCGhSI3Ypk0sU8Nlo+lwtDykoOQGAAxCqvFBleXSAAAAAElFTkSuQmCC) repeat 0 0/.2rem .2rem;
+}
+
+.decision-line {
+    z-index: 9;
+    width: 55%;
+    position: absolute;
+    bottom: 0;
+    height: 30px;
+    background-color: rgb(181, 215, 249);
+    box-shadow: 0 0px 50px 5px rgb(149, 222, 235);
+}
+
+.decision-box-bg {
+    z-index: 9;
+    margin-left: 2.5%;
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    background-color: rgba(134, 198, 255, 0.398);
+    box-shadow: 0 0px 50px 5px rgb(128, 148, 151);
+}
+
+.decision-box {
+    z-index: 9;
+    position: absolute;
+    padding-top: 100%;
+    width: 10px;
+    box-shadow: 0 0px 50px 5px rgb(54, 152, 174);
+    background-color: rgba(255, 255, 255, 0.587);
+}
+
+.decision-mv-boxs {
+    z-index: 9;
+    bottom: 0;
+    position: absolute;
+    padding-top: 4%;
+    width: 180px;
+    box-shadow: 0 0px 50px 5px rgb(54, 152, 174);
+    background-color: rgba(54, 152, 174, 0.547);
+}
+
+.decision-mv-am {
+    opacity: 0.2;
+}
