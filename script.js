@@ -36,7 +36,68 @@ function decision_am_ku(id) {
     $(am_id).removeClass("decision-mv-am")
 }
 
-function Key() {
+
+// 后端部分
+
+// 谱面数据
+var timeStamps = new Array()
+var notePosition = new Array()
+// 谱长
+var SongTime
+// 获取谱长
+function getST() {
+    var audio = document.getElementById("player");
+    if(audio.readyState > 0) {
+        var minutes = parseInt(audio.duration / 60, 10)
+        var seconds = parseInt(audio.duration % 60)
+        SongTime = minutes*60+seconds
+        $("#st").html("谱长："+minutes+"m:"+seconds+"s//s:"+SongTime)
+    }
+}
+
+// 获取谱面数据
+function LoadChart() {
+    $.getJSON("/data/chart.json", "", function (data) {
+        //each循环 使用$.each方法遍历返回的数据date
+        $.each(data, function (i, item) {
+            timeStamps.push(item.time)
+            notePosition.push(item.x)
+        })
+        // console.log(timeStamps)
+        // console.log(notePosition)
+    });
+}
+
+// 控制音乐播放
+function musicPlayer(ish) {
+    var player = $("#player")[0]; /*jquery对象转换成js对象*/
+    if (ish == 0) {
+        player.pause();//暂停
+        console.log("暂停")
+    } else {
+        player.play(); //播放
+        console.log("播放")
+    }
+}
+
+// 计时器
+var myTime = 0
+
+// 加载数据
+function LoadGame() {
+    
+}
+
+function StartGame() {
+    getST()
+    musicPlayer(0)
+    $("#tip").html("加载游戏资源中")
+    LoadGame()
+    musicPlayer(0)
+}
+
+
+function webKey() {
     //按键反应
     $(document).keydown(function (event) {
         //console.log(event.keyCode + "[Down]")
@@ -84,7 +145,13 @@ function Key() {
     });
 }
 
+
+// main
 $(function () {
+    //加载后端
+    StartGame()
+    //加载前端
     decision_boxs()
-    Key()
+    //键盘监听
+    webKey()
 })

@@ -13,11 +13,30 @@
 </head>
 
 <body>
+    <!--音乐播放器-->
+    <div class="audiopalyer">
+        <audio id="player" controls="controls" autoplay hidden="true">
+            <source src="/res/bgm.mp3" />
+        </audio>
+    </div>
+    <!--黑色背景模版-->
     <div class="bg-mask"></div>
+    <!--判定框背景-->
     <div class="decision-box-bg"></div>
+    <!--判定盒（按键效果）-->
     <div id="decision-mv-boxs"></div>
+    <!--note-->
+    <div id="note-box">
+        <div class="note-tap"></div>
+    </div>
+    <!--判定框边框-->
     <div id="decision-boxs"></div>
+    <!--判定线-->
     <div class="decision-line"></div>
+    <!--提示-->
+    <div id="st" class="st-tip"></div>
+    <div id="tip" class="tip"></div>
+    <button id="start-btn" class="start-btn">开始</button>
 
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="/script.js"></script>

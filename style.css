@@ -11,6 +11,10 @@ body {
     background-image: url(/res/NHSIC.png);
 }
 
+.audiopalyer {
+    position: absolute;
+}
+
 .bg-mask {
     position: absolute;
     bottom: 0;
@@ -62,4 +66,49 @@ body {
 
 .decision-mv-am {
     opacity: 0.2;
+}
+
+.st-tip {
+    z-index: 9;
+    left: 5%;
+    bottom: 25%;
+    position: absolute;
+    color: white;
+    font-size: 20px;
+}
+
+.tip {
+    z-index: 9;
+    left: 5%;
+    bottom: 20%;
+    position: absolute;
+    color: white;
+    font-size: 20px;
+}
+
+.start-btn {
+    z-index: 9;
+    left: 10%;
+    bottom: 10%;
+    position: absolute;
+    color: rgba(0, 0, 0, 1);
+    font-size: 20px;
+}
+
+#note-box {
+    margin-left: 44px;
+}
+
+.note-tap {
+    z-index: 9;
+    width: 160px;
+    height: 40px;
+    bottom: 10%;
+    position: absolute;
+    border-style:solid;
+    border-color: aqua;
+	border-width:6px;
+    border-radius: 10px;
+    background-color: rgba(0, 255, 255, 0.554);
+    box-shadow: 0 0px 50px 5px rgba(27, 191, 206, 0.628);
 }
